@@ -4,7 +4,7 @@ title: ¿Quién soy?
 subtitle: Mi pasión es mejorar la salud de tu corazón.
 ---
 
-###Soy el Dr. Alejandro Torres.  
+### Soy el Dr. Alejandro Torres.  
 Mi meta a mediano plazo es convertirme en cardiólogo.  
 Hoy me encuentro trabajando en un laboratorio de investigación en medicina cardiovascular. Además, doy clases de fisiología cardiovascular en la Escuela de Medicina del Tecnológico de Monterrey.
 
