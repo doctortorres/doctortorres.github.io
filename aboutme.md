@@ -11,7 +11,7 @@ Hoy me encuentro trabajando en un laboratorio de investigación en medicina card
 Los temas sobre los que escribiré aquí son:
 
 - Riesgo cardiovascular: ¿cuál es la probabilidad de que sufra un infarto al corazón u otra enfermedad cardiovasular en determinado intervalo de tiempo?
-- ¿Cómo puedo disminuir mi riesgo cardiovascular?
+- ¿Cómo puedo disminuir mi riesgo cardiovascular?  
  -Estilo de vida saludable
  -Ejercicio para el corazón
  
