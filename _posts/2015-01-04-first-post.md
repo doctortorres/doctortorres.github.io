@@ -1,7 +1,7 @@
 ---
 layout: post
-title: First post!
-image: /img/hello_world.jpeg
+title: ¡Hola!
 ---
 
-This is my first post, how exciting!
+¡Bienvenido! En este espacio te voy a enseñar a cuidar tu corazón. ¿Por qué?  
+¡Recuerda que las enfermedades del corazón y del sistema cardiovascular son la causa más común de muerte en el mundo!
