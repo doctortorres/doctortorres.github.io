@@ -1,6 +1,6 @@
 ---
 layout: post
-title: ¡Hola!
+title: ¡¡Hola!!
 image: "/img/2.jpg"
 ---
 
