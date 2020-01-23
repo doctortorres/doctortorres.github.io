@@ -1,6 +1,7 @@
 ---
 layout: post
 title: ¡Hola!
+image: "/img/2.jpg"
 ---
 
 ¡Bienvenido! En este espacio te voy a enseñar a cuidar tu corazón. ¿Por qué?  
