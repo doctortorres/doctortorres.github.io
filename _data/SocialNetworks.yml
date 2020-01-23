@@ -9,7 +9,7 @@
 facebook:
   name: "Facebook"
   baseURL: "https://www.facebook.com/"
-  icon: "fab fa-facebook"
+  icon: "fa fa-facebook"
 
 github:
   name: "GitHub"
