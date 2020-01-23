@@ -29,7 +29,7 @@ reddit:
 email:
   name: "Email me"
   baseURL: "mailto:"
-  icon: "fa-envelope"
+  icon: "fa-envelope-square"
 
 linkedin:
   name: "LinkedIn"
@@ -94,4 +94,4 @@ yelp:
 researchgate:
   name: "ResearchGate"
   baseURL: "https://www.researchgate.net/profile/"
-  icon: "fa-researchgate"
+  icon: "fa fa-researchgate"
