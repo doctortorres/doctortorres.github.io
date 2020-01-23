@@ -9,7 +9,7 @@
 facebook:
   name: "Facebook"
   baseURL: "https://www.facebook.com/"
-  icon: "fa-facebook-squared"
+  icon: "fa-facebook-f"
 
 github:
   name: "GitHub"
@@ -29,7 +29,7 @@ reddit:
 email:
   name: "Email me"
   baseURL: "mailto:"
-  icon: "fa-envelope-square"
+  icon: "fa-envelope"
 
 linkedin:
   name: "LinkedIn"
