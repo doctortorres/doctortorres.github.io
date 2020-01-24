@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Dr. Alejandro Torres
-subtitle: 'Attorney at Law'
+subtitle: 'Mi pasión es mejorar la salud de tu corazón.'
 head-title: "Harry Khanna - Attorney at Law"
 image: /img/me.jpg
 css: "../css/custom.css"
