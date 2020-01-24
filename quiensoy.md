@@ -14,7 +14,7 @@ Soy médico de profesión. Hoy, y desde hace 5 años, me encuentro entrenándome
 Los temas sobre los que escribiré aquí son:
 
 1. Riesgo cardiovascular: ¿cuál es la probabilidad de que sufra un infarto al corazón u otra enfermedad cardiovasular en determinado intervalo de tiempo?
-2. ¿Cómo puedo disminuir mi riesgo cardiovascular?
-  * Estilo de vida saludable  
-  * Ejercicio para el corazón
+2. ¿Cómo puedo disminuir mi riesgo cardiovascular?  
+  a. Estilo de vida saludable  
+  b. Ejercicio para el corazón
 
