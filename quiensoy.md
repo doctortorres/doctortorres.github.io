@@ -6,20 +6,18 @@ head-title: "Dr. Alejandro Torres"
 image: /img/me.jpg
 css: "../css/custom.css"
 ---
+ 
+Mi meta a mediano plazo es convertirme en cardiólogo.  
 
-a
+Hoy me encuentro trabajando en un laboratorio de investigación en medicina cardiovascular. Además, doy clases de fisiología cardiovascular en la Escuela de Medicina del Tecnológico de Monterrey.
 
-a
+Los temas sobre los que escribiré aquí son:
 
-# ----
-#
-# #### Prior Employment
-# - a
+* Riesgo cardiovascular: ¿cuál es la probabilidad de que sufra un infarto al corazón u otra enfermedad cardiovasular en determinado intervalo de tiempo?
 
------
-
-#### Expertise
-- a
+* ¿Cómo puedo disminuir mi riesgo cardiovascular?  
+  * Estilo de vida saludable  
+  * Ejercicio para el corazón
 
 ----
 
@@ -28,5 +26,4 @@ a
 
 ----
 
-#### Education
-- a
+
