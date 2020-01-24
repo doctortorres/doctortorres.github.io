@@ -20,7 +20,7 @@ description: blog de salud cardiovascular
 
 # List of links in the navigation bar
 navbar-links:
-  ¿Quién soy?: "¿quiénsoy?"
+  ¿Quién soy?: "quiensoy"
   Blog: "Blog"
 
 # Image to show in the navigation bar - image must be a square (width = height)
