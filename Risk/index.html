@@ -26,7 +26,10 @@ css: "/css/custom.css"
                 <script>
                     function myFunction() {
                         var x=document.getElementById("ethnicSelect").value;
-                        document.getElementById("demo").innerHTML="Seleccionaste: "+x;
+                        y=parseInt(x)
+                        z=0
+                        z=((y==1?1:0)*-0.2111)
+                        document.getElementById("demo").innerHTML="Seleccionaste: "+z;
                     }
                 </script>
        
