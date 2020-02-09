@@ -25,11 +25,15 @@ css: "/css/custom.css"
                 
                 <script>
                     function myFunction() {
-                        var x=document.getElementById("ethnicSelect").value;
-                        y=parseInt(x)
-                        z=0
-                        z=((y==1?1:0)*-0.2111)
-                        document.getElementById("demo").innerHTML="Seleccionaste: "+z;
+                        var ethnic=document.getElementById("ethnicSelect").value;
+                        ethnic=parseInt(ethnic)
+                        
+                        var sex=document.getElementById("sexSelect").value;
+                        sex=parseInt(sex)
+                        
+                        risk=0
+                        risk=((y==1?1:0)*-0.2111) + (sex*0.7496)
+                        document.getElementById("demo").innerHTML="Seleccionaste: "+risk;
                     }
                 </script>
        
