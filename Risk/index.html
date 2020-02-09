@@ -11,11 +11,11 @@ css: "/css/custom.css"
         <div class="row">
             <div class="col-lg-8 col-lg-offset-3 col-md-10 col-md-offset-1">
                 <p> Origen étnico: </p>
-                <select id="mySelect">
-                    <option value="Hispánico">Hispánico</option>
-                    <option value="Afroamericano">Afroamericano</option>
-                    <option value="Caucásico">Caucásico</option>
-                    <option value="Asiático">Asiático</option>
+                <select id="ethnicSelect">
+                    <option value="3">Hispánico</option>
+                    <option value="1">Afroamericano</option>
+                    <option value="4">Caucásico</option>
+                    <option value="2">Asiático</option>
                 </select>
                 
                 <button onclick="myFunction()">Submit</button>
@@ -25,7 +25,7 @@ css: "/css/custom.css"
                 
                 <script>
                     function myFunction() {
-                        var x=document.getElementById("mySelect").value;
+                        var x=document.getElementById("ethnicSelect").value;
                         document.getElementById("demo").innerHTML="Seleccionaste: "+x;
                     }
                 </script>
