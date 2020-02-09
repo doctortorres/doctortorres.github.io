@@ -6,22 +6,28 @@ use-site-title: true
 css: "/css/custom.css"
 ---
 
-<script type="text/javascript">
-    var number=123;
-</script>
-
 <div class="index-page">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-3 col-md-10 col-md-offset-1">
-                <p>Age: </p> <input id="input_url" class="input-reset ba b--black-20 pa2 f6 w5" style="width: 400px" name="url" placeholder='45-85 años'>
-                <button type="button" class="btn-submit border-box no-select ba ttu b f6 ph3 pv2 br1 white bg-blue b--blue darken-10">Submit</button>
-                var age=input_url
-                <p>Your Age is: 
-                <script type="text/javascript">
-                    document.write(number)
+                <p> Origen étnico: </p>
+                <select id="mySelect" onchange="myFunction()">
+                    <option value="Hispánico">Hispánico</option>
+                    <option value="Afroamericano">Afroamericano</option>
+                    <option value="Caucásico">Caucásico</option>
+                    <option value="Asiático">Asiático</option>
+                </select>
+                
+                <p>¡Gracias!</p>
+                <p id="demo"></p>
+                
+                <script>
+                    function myFunction() {
+                        var x=document.getElementById("mySelect").value;
+                        document.getElementById("demo").innerHTML="Seleccionaste: "+x;
+                    }
                 </script>
-                </p>
+       
             </div>
         </div>
     </div>
