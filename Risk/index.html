@@ -57,7 +57,7 @@ css: "/css/custom.css"
                         age=parseInt(age)
                         
                         risk=0
-                        risk=((ethnic==1?1:0)*-0.2111) + (sex*0.7496) + (age*0.0455)
+                        risk=((ethnic==1?1:0)*-0.2111) + ((ethnic==2?1:0)*-0.5055) + ((ethnic==3?1:0)*-0.19) + (sex*0.7496) + (age*0.0455)
                         document.getElementById("demo").innerHTML="Seleccionaste: "+risk;
                     }
                 </script>
