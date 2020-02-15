@@ -1,0 +1,165 @@
+---
+layout: base
+title: corazónConCiencia
+subtitle: En este espacio te enseñaré cómo cuidar tu corazón
+use-site-title: true
+css: "/css/custom.css"
+---
+
+<div class="index-page">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-3 col-md-10 col-md-offset-1">
+                <h2>Calculadora de riesgo cardiovascular</h2>
+                <p>En este espacio puedes calcular tu riesgo de sufrir un infarto en los próximos 10 años.</p> <br>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-3 col-md-10 col-md-offset-1">
+                <td>Origen étnico:</td>
+	                  <input type="radio" id="ethnic1" name="ethnic" value="1" style="vertical-align: middle; margin: 0px;">
+	                  <label for="ethnic1">Afroamericano</label><br>
+	                  <input type="radio" id="ethnic2" name="ethnic" value="2" style="vertical-align: middle; margin: 0px; margin-left: 96px;">
+	                  <label for="ethnic2">Asiático</label><br>
+	                  <input type="radio" id="ethnic3" name="ethnic" value="3" style="vertical-align: middle; margin: 0px; margin-left: 96px;">
+	                  <label for="ethnic3">Hispánico</label><br>
+	                  <input type="radio" id="ethnic4" name="ethnic" value="4" style="vertical-align: middle; margin: 0px; margin-left: 96px;">
+	                  <label for="ethnic4">Caucásico</label><br><br>
+                    
+                <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sexo:</td>
+	                  <input type="radio" id="sex1" name="sex" value="0" style="vertical-align: middle; margin: 0px; margin-left: 0px;">
+                    <label for="sex1">Female</label><br>
+                    <input type="radio" id="sex2" name="sex" value="1" style="vertical-align: middle; margin: 0px; margin-left: 96px;">
+                    <label for="sex2">Male</label><br><br>
+                
+                <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Edad:</td>
+	                  <input id="age" placeholder="20-79 años" size="14"><br><br>
+                
+                <td>&nbsp;Colesterol total:</td>
+	                  <input id="tchol" placeholder="100-500 mg/dL" size="14"><br><br>
+                
+                <td>Colesterol HDL:</td>
+	                  <input id="hdlchol" placeholder="10-200 mg/dL" size="14"><br><br>
+                
+                <td>Presión arterial:</td>
+	                  <input id="systolicBP" placeholder="95-300 mmHg" size="14" style="vertical-align: middle; margin: 0px; margin-left: 5px;"><br>
+                    <td>sistólica</td><br><br>
+
+                <td>¿Tomas medicamento para la presión arterial?</td><br>
+	                  <input type="radio" id="BPmed1" name="BPmed" value="0" style="vertical-align: middle; margin: 0px; margin-left: 96px;">
+                    <label for="BPmed1">No</label><br>
+                    <input type="radio" id="BPmed2" name="BPmed" value="1" style="vertical-align: middle; margin: 0px; margin-left: 96px;">
+                    <label for="BPmed2">Sí</label><br><br>
+
+                <td>¿Tomas medicamento para bajar el colesterol?</td><br>
+	                  <input type="radio" id="cholmed1" name="cholmed" value="0" style="vertical-align: middle; margin: 0px; margin-left: 96px;">
+                    <label for="cholmed1">No</label><br>
+                    <input type="radio" id="cholmed2" name="cholmed" value="1" style="vertical-align: middle; margin: 0px; margin-left: 96px;">
+                    <label for="cholmed2">Sí</label><br><br>
+    
+                <td>¿Te han diagnosticado con diabetes?</td><br>
+	                  <input type="radio" id="dmdx1" name="dmdx" value="0" style="vertical-align: middle; margin: 0px; margin-left: 96px;">
+                    <label for="dmdx1">No</label><br>
+                    <input type="radio" id="dmdx2" name="dmdx" value="1" style="vertical-align: middle; margin: 0px; margin-left: 96px;">
+                    <label for="dmdx2">Sí</label><br><br>
+    
+                <td>¿Fumas?</td><br>
+	                   <input type="radio" id="tobacc1" name="tobacc" value="0" style="vertical-align: middle; margin: 0px; margin-left: 96px;">
+                     <label for="tobacc1">No</label><br>
+                     <input type="radio" id="tobacc2" name="tobacc" value="1" style="vertical-align: middle; margin: 0px; margin-left: 96px;">
+                     <label for="tobacc2">Sí</label><br><br>
+
+                <td>¿Tus hermanos, padres o abuelos han sufrido o sufrieron de un infarto al corazón?</td>
+	                  <input type="radio" id="famhx1" name="famhx" value="0" style="vertical-align: middle; margin: 0px; margin-left: 96px;">
+                    <label for="famhx1">No</label><br>
+                    <input type="radio" id="famhx2" name="famhx" value="1" style="vertical-align: middle; margin: 0px; margin-left: 96px;">
+                    <label for="famhx2">Sí</label><br><br>
+
+                <td><button onclick="myFunction()" style="margin-left: 96px;">Submit</button></td>
+                    <p id="demo"></p>
+                    <p id="demo2"></p>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function myFunction() {
+	      var xethnic = document.getElementsByName("ethnic");
+	      var ethnic;
+        var i;
+	      for (i = 0; i < xethnic.length; i++) {
+  		      if (xethnic[i].checked == true) {
+        	      ethnic = xethnic[i].value;
+  		      }
+	       }
+         
+        var xsex = document.getElementsByName("sex");
+        var sex;
+        for (i = 0; i < xsex.length; i++) {
+    	      if (xsex[i].checked == true) {
+                sex = xsex[i].value;
+            }
+	      }
+    
+        var age=document.getElementById("age").value;
+        age=parseInt(age);
+    
+        var tchol=document.getElementById("tchol").value;
+    
+        var hdlchol=document.getElementById("hdlchol").value;
+    
+        var systolicBP=document.getElementById("systolicBP").value;
+    
+        var xBPmed = document.getElementsByName("BPmed");
+        var BPmed;
+        for (i = 0; i < xBPmed.length; i++) {
+    	      if (xBPmed[i].checked == true) {
+        	    BPmed = xBPmed[i].value;
+            }
+        }
+    
+        var xcholmed = document.getElementsByName("cholmed");
+        var cholmed;
+        for (i = 0; i < xcholmed.length; i++) {
+    	      if (xcholmed[i].checked == true) {
+        	      cholmed = xcholmed[i].value;
+            }
+        }
+    
+        var xdmdx = document.getElementsByName("dmdx");
+        var dmdx;
+        for (i = 0; i < xdmdx.length; i++) {
+    	      if (xdmdx[i].checked == true) {
+        	      dmdx = xdmdx[i].value;
+            }
+        }
+    
+        var xtobacc = document.getElementsByName("tobacc");
+        var tobacc;
+        for (i = 0; i < xtobacc.length; i++) {
+    	      if (xtobacc[i].checked == true) {
+          	  tobacc = xtobacc[i].value;
+            }
+        }
+    
+        var xfamhx = document.getElementsByName("famhx");
+        var famhx;
+        for (i = 0; i<xfamhx.length; i++) {
+    	      if (xfamhx[i].checked == true) {
+        	      famhx = xfamhx[i].value;
+            }
+        }
+    
+        document.getElementById("demo").innerHTML="Seleccionaste: "+ethnic + " y seleccionaste: "+sex;
+    
+        risk=0;
+    
+        risk=((ethnic==1?1:0)*-0.2111) + ((ethnic==2?1:0)*-0.5055) + ((ethnic==3?1:0)*-0.19) + (sex*0.7496) + (age*0.0455) + (tchol*0.0053) - (hdlchol*0.0140) + (systolicBP*0.0085) + (BPmed*0.2278) + (cholmed*0.1206) + (dmdx*0.3892) + (tobacc*0.4732) + (famhx*0.4522);
+    
+        risk2=100*(1-0.99963**(risk));
+
+        document.getElementById("demo2").innerHTML="Seleccionaste: "+risk2;
+}
+</script>
