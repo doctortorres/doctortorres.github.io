@@ -113,10 +113,10 @@ css: "/css/custom.css"
         var systolicBP=document.getElementById("systolicBP").value;
     
         var xBPmed = document.getElementsByName("BPmed");
-        var BPmed;
+        var bpmed;
         for (i = 0; i < xBPmed.length; i++) {
     	      if (xBPmed[i].checked == true) {
-        	    BPmed = xBPmed[i].value;
+        	    bpmed = xBPmed[i].value;
             }
         }
     
@@ -156,7 +156,7 @@ css: "/css/custom.css"
     
         risk=0;
     
-        risk=((ethnic==1?1:0)*-0.2111) + ((ethnic==2?1:0)*-0.5055) + ((ethnic==3?1:0)*-0.19) + (sex*0.7496) + (age*0.0455) + (tchol*0.0053) - (hdlchol*0.0140) + (systolicBP*0.0085) + (BPmed*0.2278) + (cholmed*0.1206) + (dmdx*0.3892) + (tobacc*0.4732) + (famhx*0.4522);
+        risk=((ethnic==1?1:0)*-0.2111) + ((ethnic==2?1:0)*-0.5055) + ((ethnic==3?1:0)*-0.19) + (sex*0.7496) + (age*0.0455) + (tchol*0.0053) - (hdlchol*0.0140) + (systolicBP*0.0085) + (bpmed*0.2278) + (cholmed*0.1206) + (dmdx*0.3892) + (tobacc*0.4732) + (famhx*0.4522);
     
         risk2=100*(1-0.99963**(risk));
 
