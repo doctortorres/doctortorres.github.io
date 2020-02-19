@@ -155,11 +155,22 @@ css: "/css/custom.css"
         }
     
         risk=0;
-    
-        risk=((ethnic==1?1:0)*-0.2111) + ((ethnic==2?1:0)*-0.5055) + ((ethnic==3?1:0)*-0.19) + (sex*0.7496) + (age*0.0455) + (tchol*0.0053) - (hdlchol*0.0140) + (systolicBP*0.0085) + (bpmed*0.2278) + (cholmed*0.1206) + (dmdx*0.3892) + (tobacc*0.4732) + (famhx*0.4522);
-    
-        risk2=100*(1-0.99963**(Math.E**(risk)));
-	var riskfinal=risk2.toFixed(2);
+    	sum=0;
+        mean=0;
+        survival=0;
+        lnage=Math.log(age);
+        lntchol=Math.log(tchol);
+        lnhdlchol=Math.log(hdlchol);
+        lnsystolicBP=Math.log(systolicBP);
+	    
+	if (sex == 0 && ethnic > 1) {
+	    sum=(-29.799*lnage)+(4.884*(lnage**2))+(13.540*lntchol)+(-3.114*(lnage*lntchol))+(-13.578*lnhdlchol)+(3.149*(lnage*lnhdlchol))+(2.019*lnsystolicBP*bpmed)+(1.957*lnsystolicBP)+(7.574*tobacc)+(-1.665*lnage*tobacc)+(0.661*dmdx);
+            mean=-29.18;
+            survival=0.9665;
+	}
+        
+        risk=100*(1-survival**(Math.E**(sum-mean)));
+	var riskfinal=risk.toFixed(1);
 	    
         document.getElementById("demo").innerHTML="Mi riesgo cardiovascular es: " + riskfinal + "%";
 	document.getElementById("demo2").innerHTML="Si tienes entre 45 y 89 años, este número representa la <u>probabilidad</u> de sufrir un <i>infarto al corazón</i> u otra enfermedad cardiovascular en <b>los próximos 10 años</b>.";
