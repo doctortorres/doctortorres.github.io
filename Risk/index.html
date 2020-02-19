@@ -175,6 +175,10 @@ css: "/css/custom.css"
             sum=(12.344*lnage)+(11.853*lntchol)+(-2.664*(lnage*lntchol))+(-7.990*lnhdlchol)+(1.769*(lnage*lnhdlchol))+(1.797*lnsystolicBP*bpmed)+(1.764*lnsystolicBP)+(7.837*tobacc)+(-1.795*lnage*tobacc)+(0.658*dmdx);
             mean=61.18;
             survival=0.9144;
+        } else if (sex == 1 && ethnic == 1) {
+            sum=(2.469*lnage)+(0.302*lntchol)+(-0.307*lnhdlchol)+(1.916*lnsystolicBP*bpmed)+(1.809*lnsystolicBP)+(0.549*tobacc)+(0.645*dmdx);
+            mean=19.54;
+            survival=0.8954;
         }
         
         risk=100*(1-survival**(Math.E**(sum-mean)));
