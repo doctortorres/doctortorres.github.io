@@ -84,7 +84,7 @@ css: "/css/custom.css"
 			<td><h2 id="riesgoASCVD"></h2></td>
         	    </tr>
 		    <tr>
-			<td><h2 id="nameRiesgoASCVD"></h2></td>
+			<td><h2 id="nameRiesgoDEPORVIDA"></h2></td>
 			<td><h2 id="riesgoDEPORVIDA"></h2></td>
 		    </tr>
         	</table>
@@ -194,7 +194,9 @@ css: "/css/custom.css"
         risk=100*(1-survival**(Math.E**(sum-mean)));
 	var riskfinal=risk.toFixed(1);
 	    
-        document.getElementById("riesgoASCVD").innerHTML=riskfinal + "%";
+        document.getElementById("nameRiesgoASCVD").innerHTML="Mi riesgo cardiovascular a 10 AÑOS: ";
+	document.getElementById("riesgoASCVD").innerHTML=riskfinal + "%";
+	document.getElementById("nameRiesgoDEPORVIDA").innerHTML="Mi riesgo cardiovascular a 30 AÑOS: ";
 	document.getElementById("riesgoDEPORVIDA").innerHTML="%";
 	document.getElementById("demo2").innerHTML="Si tienes entre 45 y 89 años, este número representa la <u>probabilidad</u> de sufrir un <i>infarto al corazón</i> u otra enfermedad cardiovascular en <b>los próximos 10 años</b>.";
 }
