@@ -6,6 +6,17 @@ use-site-title: true
 css: "/css/custom.css"
 ---
 
+<style>
+#myDIV {
+  width: 75%;
+  padding: 40px 0;
+  text-align: center;
+  background-color: rgb(1,138,219);
+  margin-top: 20px;
+  display: none;
+}
+</style>
+
 <div class="index-page">
     <div class="container">
         <div class="row">
@@ -78,16 +89,18 @@ css: "/css/custom.css"
 
                 <td><button onclick="myFunction()" style="margin-left: 96px;">Submit</button></td><br><br>
 		    		    
-		<table>
-        	    <tr>
-                        <td><h2 id="nameRiesgoASCVD"></h2></td>
-			<td><h2 id="riesgoASCVD"></h2></td>
-        	    </tr>
-		    <tr>
-			<td><h2 id="nameRiesgoDEPORVIDA"></h2></td>
-			<td><h2 id="riesgoDEPORVIDA"></h2></td>
-		    </tr>
-        	</table>
+		<div id="myDIV">
+		    <table>
+        	        <tr>
+                            <td><h2 id="nameRiesgoASCVD"></h2></td>
+			    <td><h2 id="riesgoASCVD"></h2></td>
+        	        </tr>
+		        <tr>
+			    <td><h2 id="nameRiesgoDEPORVIDA"></h2></td>
+			    <td><h2 id="riesgoDEPORVIDA"></h2></td>
+		        </tr>
+        	    </table>
+		</div>
 		<br>
 		<p id="demo2"></p>
 
@@ -98,8 +111,12 @@ css: "/css/custom.css"
 
 <script>
     function myFunction() {
-	      var xethnic = document.getElementsByName("ethnic");
-	      var ethnic;
+	
+	var xdiv = document.getElementById("myDIV");
+        xdiv.style.display = "block";
+	    
+	var xethnic = document.getElementsByName("ethnic");
+	var ethnic;
         var i;
 	      for (i = 0; i < xethnic.length; i++) {
   		      if (xethnic[i].checked == true) {
