@@ -109,6 +109,7 @@ css: "/css/custom.css"
         	    
 		<br>
 		<p id="demo2"></p><br>
+		<p id="demo3"></p><br>
 		<td>Referencias:</td><br><br>
 		<a href="https://www.ahajournals.org/doi/10.1161/CIR.0000000000000678">Guía del 2019 de la <i>American Heart Association</i> para la prevención de enfermedades Cardiovasculares</a><br><br>
 		<a href="https://www.ahajournals.org/doi/full/10.1161/01.cir.0000437741.48606.98">Guía del 2013 de la <i>American Heart Association</i> para la valoración del riesgo cardiovascular</a><br>
@@ -223,10 +224,11 @@ css: "/css/custom.css"
         risk=100*(1-survival**(Math.E**(sum-mean)));
 	var riskfinal=risk.toFixed(1);
 	    
-        document.getElementById("nameRiesgoASCVD").innerHTML="Mi riesgo de infarto a 10 AÑOS: ";
+        document.getElementById("nameRiesgoASCVD").innerHTML="Mi riesgo de infarto a 10 AÑOS*: ";
 	document.getElementById("riesgoASCVD").innerHTML=riskfinal + "%";
-	document.getElementById("nameRiesgoDEPORVIDA").innerHTML="Mi riesgo de infarto a 30 AÑOS: ";
+	document.getElementById("nameRiesgoDEPORVIDA").innerHTML="Mi riesgo de infarto de por vida**: ";
 	document.getElementById("riesgoDEPORVIDA").innerHTML="%";
-	document.getElementById("demo2").innerHTML="Si tienes entre 45 y 89 años, este número representa la <u>probabilidad</u> de sufrir un <i>infarto al corazón</i> u otra enfermedad cardiovascular en <b>los próximos 10 años</b>.";
+	document.getElementById("demo2").innerHTML="*Si tienes entre 40 y 79 años, este número representa la <u>probabilidad</u> de sufrir un <i>infarto al corazón</i> u otra enfermedad cardiovascular en <b>los próximos 10 años</b>.";
+	document.getElementById("demo3").innetHTML="**Si tienes entre 20 y 39 años, este número representa la probabilidad <b>de por vida</b> de sufrir un <iinfarto al corazón</i> u otra enfermedad cardiovascular.";
 }
 </script>
