@@ -195,6 +195,81 @@ css: "/css/custom.css"
             }
         }
     
+	<!-- Lifetime risk -->
+        
+        lifetimeRisk=0;
+        major=0;
+        elevated=0;
+        notOptimal=0;
+        
+        <!-- majors -->
+        
+        if (tchol >= 240) {
+            major++;
+        }
+        if (systolicBP >=160) {
+            major++;
+        }
+        if (diastolicBP >=100) {
+            major++;
+        }
+        if(tobacc == 1) {
+        	major++;
+        }
+        if (dmdx == 1) {
+            major++;
+        }
+        
+        <!-- elevateds -->
+        
+        if (tchol >= 200 && tchol <= 239 ) {
+            elevated++;
+        }
+        if (systolicBP >=140 && systolicBP <= 159) {
+            elevated++;
+        }
+        if (diastolicBP >=90 && diastolicBP <=99) {
+            elevated++;
+        }
+
+		<!-- notOptimals -->
+        
+        if (tchol >= 180 && tchol <= 199 ) {
+            notOptimal++;
+        }
+        if (systolicBP >=120 && systolicBP <= 139) {
+            notOptimal++;
+        }
+        if (diastolicBP >=80 && diastolicBP <=89) {
+            notOptimal++;
+        }
+        
+        if (sex == 0 && major >= 2) {
+        	lifetimeRisk=50;
+        } else if (sex == 0 && major == 1) {
+        	lifetimeRisk=39;
+        } else if (sex == 0 && elevated >= 1) {
+        	lifetimeRisk=39;
+        } else if (sex == 0 && notOptimal >=1) {
+        	lifetimeRisk=27;
+        } else if (sex == 0) {
+        	lifetimeRisk=8;
+        }
+        
+        if (sex == 1 && major >= 2) {
+        	lifetimeRisk=69;
+        } else if (sex == 1 && major == 1) {
+        	lifetimeRisk=50;
+        } else if (sex == 1 && elevated >= 1) {
+        	lifetimeRisk=46;
+        } else if (sex == 1 && notOptimal >=1) {
+        	lifetimeRisk=36;
+        } else if (sex == 1) {
+        	lifetimeRisk=5;
+        }
+        
+        <!-- 10-yr ASCVD risk -->    
+	
         risk=0;
     	sum=0;
         mean=0;
