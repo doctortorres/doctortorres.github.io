@@ -204,13 +204,17 @@ css: "/css/custom.css"
 	
 	document.getElementById("nameNull").innerHTML="Favor de contestar todos los campos.";
 	
+	var xdivnull = document.getElementById("myDIVNULL");
+	xdivnull.style.display = "none";
+        var xdiv2 = document.getElementById("myDIV2");
+        xdiv2.style.display = "none";
+        var xdiv = document.getElementById("myDIV");
+        xdiv.style.display = "none";
+
 	if (ethnic == null || sex == null || age == "" || tchol == "" || hdlchol == "" || systolicBP == "" || diastolicBP == "" || bpmed == null || dmdx == null || tobacc == null) {
-            var xdivnull = document.getElementById("myDIVNULL");
             xdivnull.style.display = "block";	
         } else {
-            var xdiv2 = document.getElementById("myDIV2");
 	    xdiv2.style.display = "block";
-	    var xdiv = document.getElementById("myDIV");
 	    xdiv.style.display = "block";
     	}
     
