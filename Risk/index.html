@@ -128,12 +128,6 @@ css: "/css/custom.css"
 
 <script>
     function myFunction() {
-	
-	var xdiv = document.getElementById("myDIV");
-        xdiv.style.display = "block";
-	    
-	var xdiv = document.getElementById("myDIV2");
-        xdiv.style.display = "block";
 	    
 	var xethnic = document.getElementsByName("ethnic");
 	var ethnic;
@@ -201,6 +195,15 @@ css: "/css/custom.css"
     	      if (xfamhx[i].checked == true) {
         	      famhx = xfamhx[i].value;
             }
+        }
+	    
+	if (age < 40) {
+            var xdiv2 = document.getElementById("myDIV2");
+            xdiv2.style.display = "block";
+        }
+        else if (age >=40) {
+        	var xdiv = document.getElementById("myDIV");
+        	xdiv.style.display = "block";
         }
     
 	<!-- Lifetime risk -->
