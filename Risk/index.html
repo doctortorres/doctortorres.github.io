@@ -152,7 +152,6 @@ css: "/css/custom.css"
 	      }
     
         var age=document.getElementById("age").value;
-        age=parseInt(age);
     
         var tchol=document.getElementById("tchol").value;
     
@@ -167,14 +166,6 @@ css: "/css/custom.css"
         for (i = 0; i < xBPmed.length; i++) {
     	      if (xBPmed[i].checked == true) {
         	    bpmed = xBPmed[i].value;
-            }
-        }
-    
-        var xcholmed = document.getElementsByName("cholmed");
-        var cholmed;
-        for (i = 0; i < xcholmed.length; i++) {
-    	      if (xcholmed[i].checked == true) {
-        	      cholmed = xcholmed[i].value;
             }
         }
     
