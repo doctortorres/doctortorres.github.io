@@ -197,13 +197,16 @@ css: "/css/custom.css"
             }
         }
 	    
+	var xdiv2 = document.getElementById("myDIV2");
+	xdiv2.style.display = "none";
+	var xdiv = document.getElementById("myDIV");
+	xdiv.style.display = "none";
+	    
 	if (age < 40) {
-            var xdiv2 = document.getElementById("myDIV2");
             xdiv2.style.display = "block";
         }
         else if (age >=40) {
-        	var xdiv = document.getElementById("myDIV");
-        	xdiv.style.display = "block";
+            xdiv.style.display = "block";
         }
     
 	<!-- Lifetime risk -->
