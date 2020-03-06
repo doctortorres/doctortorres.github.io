@@ -109,10 +109,19 @@ share-img: /heart.png
                 <td><button onclick="myFunction()" style="margin-left: 96px;">Submit</button></td><br><br>
 		    		    
 		<div id="myDIV">
-                    <td><h2 id="nameRiesgoASCVD" style="color:white;"></h2></td>
-		    <td><h2 id="riesgoASCVD" style="color:white;"></h2></td>
+        	    <table>
+            	        <tr>
+                            <td><h2 id="nameRiesgoASCVD" style="color:white;"></h2></td>
+		            <td><h2 id="riesgoASCVD" style="color:white;"></h2></td>
+                        </tr>
+                        <tr>
+                            <td> <h2 id="nameRiesgoOptimo" style="color:white;"></h2></td>
+                            <td><h2 id="riesgoOptimo" style="color:white;"></h2></td>
+                        </tr>
+            	    </table>
 		</div>
-		<br>
+		
+        	<br>
 		<div id="myDIV2">
 		    <td><h2 id="nameRiesgoDEPORVIDA" style="color:white;"></h2></td>
 		    <td><h2 id="riesgoDEPORVIDA" style="color:white;"></h2></td>
@@ -248,7 +257,7 @@ share-img: /heart.png
             elevated++;
         }
 
-		<!-- notOptimals -->
+	<!-- notOptimals -->
         
         if (tchol >= 180 && tchol <= 199 ) {
             notOptimal++;
@@ -285,7 +294,18 @@ share-img: /heart.png
         }
         
         <!-- 10-yr ASCVD risk -->    
-	
+		
+        optimalTchol=170;
+        optimalHdlchol=50;
+        optimalSystolicBP=110;
+        optimalBpmed=0;
+        optimalDmdx=0;
+        optimalTobacc=0;
+        
+        lntcholOptimal=Math.log(optimalTchol);
+        lnhdlcholOptimal=Math.log(optimalHdlchol);
+        lnsystolicBPOptimal=Math.log(optimalSystolicBP);
+        
         risk=0;
     	sum=0;
         mean=0;
@@ -297,24 +317,31 @@ share-img: /heart.png
 	    
 	if (sex == 0 && ethnic > 1) {
 	    sum=(-29.799*lnage)+(4.884*(lnage**2))+(13.540*lntchol)+(-3.114*(lnage*lntchol))+(-13.578*lnhdlchol)+(3.149*(lnage*lnhdlchol))+(2.019*lnsystolicBP*bpmed)+(1.957*lnsystolicBP)+(7.574*tobacc)+(-1.665*lnage*tobacc)+(0.661*dmdx);
+            optimalSUM=(-29.799*lnage)+(4.884*(lnage**2))+(13.540*lntcholOptimal)+(-3.114*(lnage*lntcholOptimal))+(-13.578*lnhdlcholOptimal)+(3.149*(lnage*lnhdlcholOptimal))+(2.019*lnsystolicBPOptimal*optimalBpmed)+(1.957*lnsystolicBPOptimal)+(7.574*optimalTobacc)+(-1.665*lnage*optimalTobacc)+(0.661*optimalDmdx);
             mean=-29.18;
             survival=0.9665;
 	} else if (sex == 0 && ethnic == 1) {
 	    sum=(17.114*lnage)+(0.940*lntchol)+(-18.920*lnhdlchol)+(4.475*(lnage*lnhdlchol))+(29.291*lnsystolicBP*bpmed)+(-6.432*(lnage*lnsystolicBP)*bpmed)+(27.820*lnsystolicBP)+(-6.087*(lnage*lnsystolicBP))+(0.691*tobacc)+(0.874*dmdx);
+            optimalSUM=(17.114*lnage)+(0.940*lntcholOptimal)+(-18.920*lnhdlcholOptimal)+(4.475*(lnage*lnhdlcholOptimal))+(29.291*lnsystolicBPOptimal*optimalBpmed)+(-6.432*(lnage*lnsystolicBPOptimal)*optimalBpmed)+(27.820*lnsystolicBPOptimal)+(-6.087*(lnage*lnsystolicBPOptimal))+(0.691*optimalTobacc)+(0.874*optimalDmdx);
 	    mean=86.61;
 	    survival=0.9533;
 	} else if (sex == 1 && ethnic > 1) {
             sum=(12.344*lnage)+(11.853*lntchol)+(-2.664*(lnage*lntchol))+(-7.990*lnhdlchol)+(1.769*(lnage*lnhdlchol))+(1.797*lnsystolicBP*bpmed)+(1.764*lnsystolicBP)+(7.837*tobacc)+(-1.795*lnage*tobacc)+(0.658*dmdx);
+            optimalSUM=(12.344*lnage)+(11.853*lntcholOptimal)+(-2.664*(lnage*lntcholOptimal))+(-7.990*lnhdlcholOptimal)+(1.769*(lnage*lnhdlcholOptimal))+(1.797*lnsystolicBPOptimal*optimalBpmed)+(1.764*lnsystolicBPOptimal)+(7.837*optimalTobacc)+(-1.795*lnage*optimalTobacc)+(0.658*optimalDmdx);
             mean=61.18;
             survival=0.9144;
         } else if (sex == 1 && ethnic == 1) {
             sum=(2.469*lnage)+(0.302*lntchol)+(-0.307*lnhdlchol)+(1.916*lnsystolicBP*bpmed)+(1.809*lnsystolicBP)+(0.549*tobacc)+(0.645*dmdx);
+            optimalSUM=(2.469*lnage)+(0.302*lntcholOptimal)+(-0.307*lnhdlcholOptimal)+(1.916*lnsystolicBPOptimal*optimalBpmed)+(1.809*lnsystolicBPOptimal)+(0.549*optimalTobacc)+(0.645*optimalDmdx);
             mean=19.54;
             survival=0.8954;
         }
         
         risk=100*(1-survival**(Math.E**(sum-mean)));
 	var riskfinal=risk.toFixed(1);
+    
+    	riskOptimal=100*(1-survival**(Math.E**(optimalSUM-mean)));
+        riskOptimalFinal=riskOptimal.toFixed(1);
 	    
         document.getElementById("nameRiesgoASCVD").innerHTML="Mi riesgo de infarto a 10 AÑOS*: ";
 	if (age < 40 || age > 79) {
@@ -322,12 +349,21 @@ share-img: /heart.png
 	} else {
 	    document.getElementById("riesgoASCVD").innerHTML=riskfinal + "%";
 	}
-	document.getElementById("nameRiesgoDEPORVIDA").innerHTML="Mi riesgo de infarto de por vida**: ";
+	    
+    	document.getElementById("nameRiesgoOptimo").innerHTML="El riesgo óptimo a esta edad para alguien sin factores de riesgo es de: ";
+    	if (age < 40 || age > 79) {
+    	document.getElementById("riesgoOptimo").innerHTML="Disponible solamente para edades de 40-79 años.";
+    	} else {
+    	document.getElementById("riesgoOptimo").innerHTML=riskOptimalFinal + "%";
+	}
+	    
+    	document.getElementById("nameRiesgoDEPORVIDA").innerHTML="Mi riesgo de infarto de por vida**: ";
 	if (age < 20 || age > 59) {
 	    document.getElementById("riesgoDEPORVIDA").innerHTML="Disponible solamente para edades de 20-59 años";
 	} else {
 	    document.getElementById("riesgoDEPORVIDA").innerHTML=lifetimeRisk + "%";
 	}
+	    
 	document.getElementById("demo2").innerHTML="*Si tienes entre 40 y 79 años, este número representa la <u>probabilidad</u> de sufrir un <i>infarto al corazón</i> u otra enfermedad cardiovascular en <b>los próximos 10 años</b>.";
 	document.getElementById("demo3").innerHTML="**Si tienes entre 20 y 59 años, este número representa la probabilidad <b>de por vida</b> de sufrir un <iinfarto al corazón</i> u otra enfermedad cardiovascular.";
 }
